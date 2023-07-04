@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">AppGasEta</string>
+    <string name="txt_titulo">Gasolina x Etanol</string>
+    <string name="txt_hint_edit_gasolina">Preço da Gasolina</string>
+    <string name="txt_hint_edit_Sobrenome">Sobrenome</string>
+    <string name="txt_hint_edit_Curso_desejado">Nome do Curso Desejado</string>
+    <string name="txt_hint_edit_Telefone_Contato">Telefone de Contato</string>
+    <string name="txt_Button_Limpar">Limpar</string>
+    <string name="txt_Button_Finalizar">Finalizar</string>
+    <string name="txt_Button_Salvar">Salvar</string>
+    <string name="txt_selecioneCurso">Selecione o Curso</string>
+    <string name="txt_Gasolina">Gasolina:</string>
+    <string name="txt_etanol">Etanol:</string>
+    <string name="txt_preco_etanol">Preço do Etanol</string>
+    <string name="txt_button_calcular">Calcular</string>
+    <string name="txt_resultado">Resultado</string>
+</resources>
