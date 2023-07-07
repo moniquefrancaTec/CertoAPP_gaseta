@@ -1,23 +1,26 @@
 package dev.android.monique.franca.app.lista.appgaseta.controller;
 
+import android.content.ContentValues;
 import android.content.SharedPreferences;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import dev.android.monique.franca.app.lista.appgaseta.Database.GasEta;
 import dev.android.monique.franca.app.lista.appgaseta.view.MainActivity;
 import dev.android.monique.franca.app.lista.appgaseta.model.Combustivel;
 
-public class CombustivelController {
+public class CombustivelController extends GasEta {
 
     SharedPreferences preferences;
     SharedPreferences.Editor listaVip;
 
     public  static  final  String NOME_PREFERENCES ="pref_listavip";
 
-    public CombustivelController(MainActivity mainActivity){
+    public CombustivelController(MainActivity activity){
+        super(activity);
 
-        preferences = mainActivity.getSharedPreferences(NOME_PREFERENCES,0);
+        preferences = activity.getSharedPreferences(NOME_PREFERENCES,0);
         listaVip = preferences.edit();
 
     }
@@ -36,6 +39,13 @@ public class CombustivelController {
         listaVip.putString("precoEtanol", String.valueOf(combustivel.getPrecoEtanol()));
         listaVip.putString("Resultado", String.valueOf(combustivel.getResultado()));
         listaVip.apply();
+
+
+        ContentValues dados = new ContentValues();
+        dados.put("precoGasolina", combustivel.getPrecoGasolina());
+        dados.put("precoEtanol", combustivel.getPrecoEtanol());
+        dados.put("resultado", combustivel.getResultado());
+        salvarDados("Combustive",dados);
 
     }
 

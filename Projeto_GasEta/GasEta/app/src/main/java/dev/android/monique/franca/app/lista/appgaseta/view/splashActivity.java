@@ -6,11 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import dev.android.monique.franca.app.lista.appgaseta.Database.GasEta;
 import dev.android.monique.franca.app.lista.appgaseta.R;
 
 public class splashActivity extends AppCompatActivity {
 
-    public static final int TIME_OUT_SPLASH =3000;
+    public static final int TIME_OUT_SPLASH =6000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,9 @@ public class splashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+
+                GasEta db = new GasEta(splashActivity.this);
+
                 Intent telaPrincipal = new Intent(splashActivity.this,MainActivity.class);
                 startActivity(telaPrincipal);
                 finish();
